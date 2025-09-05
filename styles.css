@@ -1,5 +1,7 @@
-*{box-sizing:border-box} body{margin:0;font-family:system-ui}
-main{max-width:960px;margin:auto;padding:16px}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,sans-serif;line-height:1.6}
 header,footer{background:#f5f5f5;padding:12px 16px}
-h1,h2{margin:0 0 12px} section{margin:16px 0}
-a{color:inherit}
+main{max-width:960px;margin:auto;padding:16px}
+h1,h2{margin:0 0 12px}
+section{margin:16px 0}
+a{color:inherit;text-decoration:underline}
