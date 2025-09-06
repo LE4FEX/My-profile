@@ -35,3 +35,6 @@ btn?.addEventListener("click",()=>{
   const isDark = root.classList.toggle("dark");
   localStorage.setItem(KEY, isDark ? "dark" : "light");
 });
+
+localStorage.getItem("site:theme") // ควรได้ "dark" หรือ "light"
+document.documentElement.classList.contains("dark") // ควรได้ true หรือ false
