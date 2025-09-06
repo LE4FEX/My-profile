@@ -39,6 +39,7 @@ html,body{background:var(--bg);color:var(--fg)}
 .card{background:var(--card)
 html.dark{--bg:#0f1115;--fg:#e6e6e6;--card:#161a22}}
 
-a:hover{text-decoration:none
+a:hover{text-decoration:none}
+
 .card{transition:transform .12s, box-shadow .12s}
 .card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
