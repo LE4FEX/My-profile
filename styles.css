@@ -1,7 +1,7 @@
 /* v4 */
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,sans-serif;line-height:1.7}
-header,footer{background:#f5f5f5;padding:12px 16px}
+header,footer{background:var(--card-bg);padding:12px 16px}
 header p{margin:6px 0 0;opacity:.8}
 main{max-width:960px;margin:auto;padding:16px}
 h1{font-size:28px;margin:0 0 12px}
@@ -30,6 +30,13 @@ html.dark{
   --bg:#0f1115;
   --fg:#e6e6e6;
   --card-bg:#161a22;
+}
+
+/* forced light via class */
+html.light{
+  --bg:#ffffff;
+  --fg:#111111;
+  --card-bg:#ffffff;
 }
 
 html,body{transition:background-color .15s,color .15s}

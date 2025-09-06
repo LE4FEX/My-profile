@@ -3,8 +3,12 @@ const root = document.documentElement;
 const btn  = document.getElementById("toggle-theme");
 
 function applyThemeFromStorage(){
-  const isDark = localStorage.getItem(KEY) === "dark";
-  root.classList.toggle("dark", isDark);
+  const theme = localStorage.getItem(KEY);
+  const isDark = theme === "dark";
+  const isLight = theme === "light";
+  root.classList.remove("dark", "light");
+  if (isDark) root.classList.add("dark");
+  if (isLight) root.classList.add("light");
   if (btn) btn.setAttribute("aria-pressed", String(isDark));
 }
 
@@ -13,8 +17,8 @@ applyThemeFromStorage();
 
 // คลิกสลับ + บันทึก + apply
 btn?.addEventListener("click", () => {
-  const next = !(root.classList.contains("dark"));
-  localStorage.setItem(KEY, next ? "dark" : "light");
+  const nextIsDark = !root.classList.contains("dark");
+  localStorage.setItem(KEY, nextIsDark ? "dark" : "light");
   applyThemeFromStorage();
 });
 
