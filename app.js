@@ -13,3 +13,5 @@ function saveTheme(){
 
 loadTheme();
 $btn?.addEventListener("click", saveTheme);
+
+console.log("app.js loaded");
