@@ -31,3 +31,6 @@ html.dark{
   --fg:#e6e6e6;
   --card-bg:#161a22;
 }
+
+html,body{transition:background-color .15s,color .15s}
+.card{transition:transform .12s, box-shadow .12s, background-color .15s}
