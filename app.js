@@ -26,3 +26,15 @@ btn?.addEventListener("click", () => {
 window.addEventListener("storage", (e) => {
   if (e.key === KEY) applyThemeFromStorage();
 });
+
+const input = document.getElementById("todo-input");
+const addBtn = document.getElementById("add-btn");
+
+addBtn.onclick = () => {
+  const text = input.value.trim();
+  if(text){
+    todos.push(text);   // เพิ่มลง state
+    input.value = "";   // เคลียร์ช่อง
+    render();           // sync DOM
+  }
+};

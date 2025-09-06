@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo Render Test</title>
+</head>
+<body>
+  <ul id="list"></ul>
+
+  <script>
+    let todos = ["อ่านหนังสือ", "ทำการบ้าน"];
+    const list = document.getElementById("list");
+
+    function render() {
+        list.innerHTML = "";
+        todos.forEach((todo, index) => {
+            const li = document.createElement("li");
+            li.textContent = todo + " ";
+            const btn = document.createElement("button");
+            btn.textContent = "ลบ";
+            btn.onclick = () => {
+            todos.splice(index, 1);
+            render();
+            };
+            li.appendChild(btn);
+            list.appendChild(li);
+        });
+    }
+
+    render();
+  </script>
+</body>
+</html>
