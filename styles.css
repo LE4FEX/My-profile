@@ -17,3 +17,11 @@ header p {margin: 6px 0 0;opacity: .8}
     .cards{gap:12px}
     .card{padding: 10px}
 }
+
+:root{--bg:#ffffff;--fg:#111111;--card:#ffffff}
+@media (prefers-color-scheme: dark){
+    :root{--bg:#0f1115;--fg:#e6e6e6;--card:#161a22}
+}
+body{background: var(--bg);color: var(--fg)}
+.card{background: var(--card)}
+html.dark{--bg:#0f1115;--fg:#e6e6e6;--card:#161a22}
