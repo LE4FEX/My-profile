@@ -1,4 +1,4 @@
-*{box-sizing:border-box}
+/* v3 */ *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,sans-serif;line-height:1.6}
 header,footer{background:#f5f5f5;padding:12px 16px}
 header p{margin:6px 0 0;opacity:.8}

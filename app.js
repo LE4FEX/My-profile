@@ -22,6 +22,7 @@ console.log({
   cardsOK: document.querySelectorAll(".cards .card").length >= 2,
 });
 
+// app.js
 console.log("ok");
 
 (function init(){
