@@ -1,6 +1,14 @@
-const KEY = "site:theme";
-const $html = document.documentElement;
-const $btn = document.getElementById("toggle-theme");
+const KEY="site:theme";
+const root=document.documentElement;
+const btn=document.getElementById("toggle-theme");
+
+(function init(){
+  if(localStorage.getItem(KEY)==="dark") root.classList.add("dark");
+})();
+btn?.addEventListener("click",()=>{
+  const isDark=root.classList.toggle("dark");
+  localStorage.setItem(KEY,isDark?"dark":"light");
+});
 
 function loadTheme(){
   const v = localStorage.getItem(KEY);
@@ -24,14 +32,6 @@ console.log({
 
 // app.js
 console.log("ok");
-
-(function init(){
-  if(localStorage.getItem(KEY) === "dark") root.classList.add("dark");
-})();
-btn?.addEventListener("click",()=>{
-  const isDark = root.classList.toggle("dark");
-  localStorage.setItem(KEY, isDark ? "dark" : "light");
-});
 
 localStorage.getItem("site:theme") // ควรได้ "dark" หรือ "light"
 document.documentElement.classList.contains("dark") // ควรได้ true หรือ false
