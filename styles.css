@@ -5,23 +5,3 @@ main{max-width:960px;margin:auto;padding:16px}
 h1,h2{margin:0 0 12px}
 section{margin:16px 0}
 a{color:inherit;text-decoration:underline}
-.cards{display: flex;flex-wrap: wrap;gap: 16px;}
-.card{flex: 1 1 260px;border: 1px solid #ddd;border-radius: 8px;padding: 12px;background: #fff}
-.card h3{margin: 0 0 8px}
-.card p{margin: 0 0 12px}
-.card a{display: inline-block}
-header p {margin: 6px 0 0;opacity: .8}
-
-@media (max-width:480px){
-    main{padding:12px}
-    .cards{gap:12px}
-    .card{padding: 10px}
-}
-
-:root{--bg:#ffffff;--fg:#111111;--card:#ffffff}
-@media (prefers-color-scheme: dark){
-    :root{--bg:#0f1115;--fg:#e6e6e6;--card:#161a22}
-}
-body{background: var(--bg);color: var(--fg)}
-.card{background: var(--card)}
-html.dark{--bg:#0f1115;--fg:#e6e6e6;--card:#161a22}
