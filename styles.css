@@ -19,3 +19,22 @@ a{color:inherit;text-decoration:underline}
   .cards{gap:12px}
   .card{padding:10px}
 }
+
+.card{transition:transform .12s ease, box-shadow .12s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+
+body{line-height:1.7}
+h1{font-size:28px}
+h2{font-size:20px}
+
+section>h2{margin-top: 24px;}
+
+/* dark theme */
+:root{--bg:#ffffff;--fg:#111;--card-bg:#fff}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0f1115;--fg:#e6e6e6;--card-bg:#161a22}
+}
+
+html,body{background:var(--bg);color:var(--fg)}
+.card{background:var(--card)
+html.dark{--bg:#0f1115;--fg:#e6e6e6;--card:#161a22}}

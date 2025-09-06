@@ -22,15 +22,16 @@ console.log({
   cardsOK: document.querySelectorAll(".cards .card").length >= 2,
 });
 
-// app.js
-(function(){
-  const result = {
-    h1: document.querySelector("h1")?.textContent?.trim(),
-    headOK: !!document.querySelector('meta[charset]') && !!document.querySelector('meta[name="viewport"]'),
-    cssOK: [...document.styleSheets].some(s => String(s.href||'').includes('styles.css')),
-    cardsOK: document.querySelectorAll(".cards .card").length >= 2,
-  };
-  alert(JSON.stringify(result, null, 2));
+console.log("ok");
+
+const KEY = "site:theme";
+const root = document.documentElement;
+const btn = document.getElementById("toggle-theme");
+
+(function init(){
+  if(localStorage.getItem(KEY) === "dark") root.classList.add("dark");
 })();
-
-
+btn?.addEventListener("click",()=>{
+  const isDark = root.classList.toggle("dark");
+  localStorage.setItem(KEY, isDark ? "dark" : "light");
+});
