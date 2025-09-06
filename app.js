@@ -24,10 +24,6 @@ console.log({
 
 console.log("ok");
 
-const KEY = "site:theme";
-const root = document.documentElement;
-const btn = document.getElementById("toggle-theme");
-
 (function init(){
   if(localStorage.getItem(KEY) === "dark") root.classList.add("dark");
 })();
