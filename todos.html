@@ -5,27 +5,40 @@
   <title>Todo Render Test</title>
 </head>
 <body>
+  <input id="todo-input" placeholder="พิมพ์งานใหม่...">
+  <button id="add-btn">เพิ่ม</button>
   <ul id="list"></ul>
 
   <script>
     let todos = ["อ่านหนังสือ", "ทำการบ้าน"];
     const list = document.getElementById("list");
+    const input = document.getElementById("todo-input");
+    const addBtn = document.getElementById("add-btn");
 
     function render() {
-        list.innerHTML = "";
-        todos.forEach((todo, index) => {
-            const li = document.createElement("li");
-            li.textContent = todo + " ";
-            const btn = document.createElement("button");
-            btn.textContent = "ลบ";
-            btn.onclick = () => {
-            todos.splice(index, 1);
-            render();
-            };
-            li.appendChild(btn);
-            list.appendChild(li);
-        });
+      list.innerHTML = "";
+      todos.forEach((todo, index) => {
+        const li = document.createElement("li");
+        li.textContent = todo + " ";
+        const btn = document.createElement("button");
+        btn.textContent = "ลบ";
+        btn.onclick = () => {
+          todos.splice(index, 1);
+          render();
+        };
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
     }
+
+    addBtn.onclick = () => {
+      const text = input.value.trim();
+      if (text) {
+        todos.push(text);
+        input.value = "";
+        render();
+      }
+    };
 
     render();
   </script>
