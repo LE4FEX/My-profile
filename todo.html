@@ -7,9 +7,17 @@
 </head>
 <body>
   <h1>Todos</h1>
-  <input id="todo-input" placeholder="พิมพ์งานใหม่...">
-  <button id="add-btn" type="button">เพิ่ม</button>
-  <ul id="list"></ul>
-  <script src="./todo.js" defer></script>
+    <form id="todo-form">
+      <input id="todo-input" placeholder="พิมพ์งานใหม่..." required>
+      <button id="add-btn" type="submit">เพิ่ม</button>
+    </form>
+    <ul id="list"></ul>
+    <input id="search" placeholder="ค้นหา">
+      <select id="filter">
+        <option value="all">ทั้งหมด</option>
+        <option value="active">ค้าง</option>
+        <option value="done">เสร็จ</option>
+      </select>
+
 </body>
 </html>
