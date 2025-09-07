@@ -1,39 +1,31 @@
-const KEY = "todo:v1"
-let todo = JSON.parse(localStorage.getItem(KEY) || '[]');
-const save = () => localStorage.setItem(KEY, JSON.stringify(todo));
+let todos = ["อ่านหนังสือ", "ทำการบ้าน"];
 
-// ----- dom refs -----
 const $list  = document.getElementById("list");
 const $input = document.getElementById("todo-input");
 const $add   = document.getElementById("add-btn");
 
-// ----- render (state -> DOM) -----
 function render() {
   $list.innerHTML = "";
-  todo.forEach((text, idx) => {
+  todos.forEach((text, idx) => {
     const li  = document.createElement("li");
     const del = document.createElement("button");
     li.textContent = text + " ";
     del.textContent = "ลบ";
-
     del.onclick = () => {
-      todo.splice(idx, 1);   // อัปเดต state
-      render();               // sync DOM
+      todos.splice(idx, 1);
+      render();
     };
-
     li.appendChild(del);
     $list.appendChild(li);
   });
 }
 
-// ----- events -----
 $add.onclick = () => {
   const text = $input.value.trim();
   if (!text) return;
-  todo.push(text);  // อัปเดต state
+  todos.push(text);
   $input.value = "";
-  render();          // sync DOM
+  render();
 };
 
-// first paint
 render();
