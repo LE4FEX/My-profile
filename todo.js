@@ -1,6 +1,6 @@
-const KEY = "yodos:v1"
-let todos = JSON.parse(localStorage.getItem(KEY) || '[]');
-const save = () => localStorage.setItem(KEY, JSON.stringify(todos));
+const KEY = "todo:v1"
+let todo = JSON.parse(localStorage.getItem(KEY) || '[]');
+const save = () => localStorage.setItem(KEY, JSON.stringify(todo));
 
 // ----- dom refs -----
 const $list  = document.getElementById("list");
@@ -10,14 +10,14 @@ const $add   = document.getElementById("add-btn");
 // ----- render (state -> DOM) -----
 function render() {
   $list.innerHTML = "";
-  todos.forEach((text, idx) => {
+  todo.forEach((text, idx) => {
     const li  = document.createElement("li");
     const del = document.createElement("button");
     li.textContent = text + " ";
     del.textContent = "ลบ";
 
     del.onclick = () => {
-      todos.splice(idx, 1);   // อัปเดต state
+      todo.splice(idx, 1);   // อัปเดต state
       render();               // sync DOM
     };
 
@@ -30,7 +30,7 @@ function render() {
 $add.onclick = () => {
   const text = $input.value.trim();
   if (!text) return;
-  todos.push(text);  // อัปเดต state
+  todo.push(text);  // อัปเดต state
   $input.value = "";
   render();          // sync DOM
 };
