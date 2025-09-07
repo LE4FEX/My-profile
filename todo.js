@@ -1,3 +1,4 @@
+alert("todo.js loaded");
 const KEY = "todos:v1";
 const $form = document.getElementById("todo-form");
 $form.onsubmit = (e) => { e.preventDefault(); $add.click(); };
